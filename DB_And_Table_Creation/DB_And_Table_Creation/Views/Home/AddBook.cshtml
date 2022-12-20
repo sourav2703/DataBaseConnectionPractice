@@ -1,0 +1,67 @@
+﻿
+@{
+    Layout = "_Layout";
+}
+
+@using DB_And_Table_Creation.Models
+@model BookModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddBook</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto Slab', serif;
+        }
+
+        .container {
+            border: 1px solid red;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            padding-bottom: 200px;
+        }
+
+        .child_container {
+            border: 1px solid rgb(15, 15, 14);
+            background-color: rgb(188, 189, 190);
+            width: 70%;
+            height: 80%;
+            padding-bottom: 100px;
+        }
+
+        .form_div {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+            .form_div input {
+                height: 30px;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="child_container">
+            <h2>Add Books</h2>
+            <form asp-action="AddBook_Post" method="post">
+                <div class="form_div">
+                    <label asp-for="Title"></label>
+                    <input asp-for="Title" placeholder="Enter Title">
+                </div>
+
+
+                <div class="form_div" id="submit_btn">
+                    <input type="submit" value="Add Book">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
